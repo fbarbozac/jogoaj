@@ -1,16 +1,20 @@
 class Cronometro {
 	private java.util.Date tempoInicial;
+	private java.util.Date tempoFinal;
 
-	public Cronometro() {
+	public void inicie() {
 		this.tempoInicial = new java.util.Date();
 	}
 	
-	public long getMilisegundos() {
-		java.util.Date tempoFinal = new java.util.Date();
-		return (tempoFinal.getTime() - this.tempoInicial.getTime());
+	public void pare() {
+		this.tempoFinal = new java.util.Date();
+	}
+	
+	public long getIntervaloMilisegundos() {
+		return (this.tempoFinal.getTime() - this.tempoInicial.getTime());
 	}
 
-	public long getSegundos() {
-		return (this.getMilisegundos() / 1000);
+	public long getIntervaloSegundos() {
+		return (this.getIntervaloMilisegundos() / 1000);
 	}
 }

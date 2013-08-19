@@ -1,9 +1,8 @@
-class GeraPergunta {
+class GeradorDePerguntas {
 	private String pergunta;
-	private boolean resposta;
+	private boolean gabarito;
 	
-	public GeraPergunta() {
-	
+	public String getPergunta() {
 		int temp = new java.util.Random().nextInt(6);
 		
 		int operando1 = new java.util.Random().nextInt(100);
@@ -13,43 +12,41 @@ class GeraPergunta {
 		{
 			case 0:
 				this.pergunta = String.format("(%s > %s) == 0 ou 1 ?", operando1, operando2);
-				this.resposta = (operando1 > operando2);
+				this.gabarito = (operando1 > operando2);
 				break;
 
 			case 1:
 				this.pergunta = String.format("(%s >= %s) == 0 ou 1 ?", operando1, operando2);
-				this.resposta = (operando1 >= operando2);
+				this.gabarito = (operando1 >= operando2);
 				break;
 
 			case 2:
 				this.pergunta = String.format("(%s < %s) == 0 ou 1 ?", operando1, operando2);
-				this.resposta = (operando1 < operando2);
+				this.gabarito = (operando1 < operando2);
 				break;
 				
 			case 3:
 				this.pergunta = String.format("(%s <= %s) == 0 ou 1 ?", operando1, operando2);
-				this.resposta = (operando1 <= operando2);
+				this.gabarito = (operando1 <= operando2);
 				break;
 				
 			case 4:
 				this.pergunta = String.format("(%s == %s) == 0 ou 1 ?", operando1, operando2);
-				this.resposta = (operando1 == operando2);
+				this.gabarito = (operando1 == operando2);
 				break;
 				
 			case 5:
 				this.pergunta = String.format("(%s != %s) == 0 ou 1 ?", operando1, operando2);
-				this.resposta = (operando1 != operando2);
+				this.gabarito = (operando1 != operando2);
 				break;
 				
 		}
-	}
-
-	public String getPergunta() {
+		
 		return this.pergunta;
 	}
 	
-	public boolean isResposta(String resposta) {
-		return (this.resposta == (resposta.equals("0") ? false : true));
+	public boolean isGabarito(String gabarito) {
+		return (this.gabarito == (gabarito.equals("0") ? false : true));
 	}
 	
 }	

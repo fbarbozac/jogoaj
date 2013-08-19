@@ -10,7 +10,7 @@ class Jogador {
 		return this.nome;
 	}
 	
-	public void setPontos() {
+	public void adicionaPontos() {
 		this.pontos++;
 	}
 	
